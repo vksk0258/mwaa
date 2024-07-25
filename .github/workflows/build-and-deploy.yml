@@ -19,12 +19,10 @@ jobs:
           npm install -g yarn
           npm install --legacy-peer-deps --save-dev --ignore-scripts install-peers
           yarn install
-     - name: Patch
-       run: |
-          npm version patch > version.txt
-         
+
      - name: Build static file
        run: npm run build
+       working-directory: .
 
      - name: Configure AWS Credentials
        uses: aws-actions/configure-aws-credentials@v1
