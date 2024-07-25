@@ -15,7 +15,10 @@ jobs:
        uses: actions/setup-node@v2
 
      - name: Install dependencies
-       run: npm install -g yarn npm install --legacy-peer-deps --save-dev --ignore-scripts install-peers yarn install
+       run: |
+          npm install -g yarn
+          npm install --legacy-peer-deps --save-dev --ignore-scripts install-peers
+          yarn install
 
      - name: Build static file
        run: npm run build
