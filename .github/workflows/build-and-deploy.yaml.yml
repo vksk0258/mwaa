@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: '16.x' # Specify the Node.js version you want to use
 
+      - name: Check for package.json
+        run: test -f ./dags/package.json || echo "Error: package.json not found!" && exit 1
+
       - name: Install dependencies
         run: npm install
         working-directory: ./dags
