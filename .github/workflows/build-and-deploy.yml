@@ -4,6 +4,15 @@ on:
    branches:
      - main
 
+env:
+  BUCKET_NAME: hd-mwaa-bucket
+  AWS_REGION: ap-northeast-2
+
+
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
+
 jobs:
  Deploy:
    runs-on: ubuntu-latest
